@@ -1,0 +1,15 @@
+name: ci-node-workflow # nome do ci
+on: [push] # Toda vez que for feito um push o este processo de CI  vai rodar
+jobs: # Quais o serviços que quero rodar
+  check-applications: #nome do job
+    runs-on: ubuntu-latest # onde quero rodar
+    steps: #quais os passo que quero executar
+      - uses: actions/checkout@v2 # ele faz um gitcheckout
+      - uses: actions/setup-node@v2 # prepara o ambiente do node
+        with:
+          node-version: "18"
+      - run:
+          npx jest
+
+          # Para usar action usamos o USE
+          # Para usar comanando usamos RUN
