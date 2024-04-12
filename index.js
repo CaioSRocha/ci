@@ -1,6 +1,7 @@
 
 const soma = (a, b) => {
-  return a + b;
+  const c = 3
+  return a + b ;
 };
 
 
